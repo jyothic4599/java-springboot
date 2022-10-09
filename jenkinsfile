@@ -36,12 +36,12 @@ pipeline{
            steps{
                 echo 'Deployed to UAT'
              }
-      }
+       }
        stage('Deploy to prod'){
            steps{
                 echo 'Deployed to prod'
              }
-      }
+       }
      post{ 
          failure{ 
               echo'failed'
@@ -62,4 +62,3 @@ pipeline{
 
 
 
-}
