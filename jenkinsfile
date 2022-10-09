@@ -1,48 +1,49 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
       stage('Build'){
            steps{
                 echo 'Build'
            }
       }
-    stage('Test'){
+        stage('Test'){
            steps{
                 echo 'Test'
              }
       } 
-    stage('Sonarqube analysis'){
+        stage('Sonarqube analysis'){
            steps{
                 echo 'Sonarqube analysis'
              }
       }
 
-    stage('Push to artifactory'){
+        stage('Push to artifactory'){
            steps{
                 echo 'Push to artifactory'
              }
       }
-      stage('Deploy to Dev'){
+        stage('Deploy to Dev'){
            steps{
                 echo 'Deployed to Dev'
              }
       }
-     stage('Deploy to QA'){
+        stage('Deploy to QA'){
            steps{
                 echo 'Deployed to QA'
              }
       }
-       stage('Deploy to UAT'){
+        stage('Deploy to UAT'){
            steps{
                 echo 'Deployed to UAT'
              }
        }
-       stage('Deploy to prod'){
+        stage('Deploy to prod'){
            steps{
                 echo 'Deployed to prod'
              }
        }
-     post{ 
+   }
+        post { 
          failure{ 
               echo'failed'
           }
@@ -53,12 +54,12 @@ pipeline{
               echo'always'
           }
         } 
-
-     }
-
-
-
 }
+     
+
+
+
+
 
 
 
